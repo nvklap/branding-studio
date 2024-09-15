@@ -1,0 +1,70 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as u;
+
+.nav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: v.$c-primary-color;
+	padding: 3rem 0rem 1rem 0rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	overflow: auto;
+	transform: translateX(100%);
+	transition: all 300ms ease-in-out;
+	z-index: 1;
+
+	@include u.breakpoints(large) {
+		all: unset;
+		display: block;
+		width: 100%;
+	}
+
+	&--open {
+		transform: translateX(0%);
+	}
+
+	&__list {
+		@include u.breakpoints(large) {
+			display: flex;
+		}
+	}
+
+	&__item {
+		@include u.breakpoints(large) {
+			flex: 1 1 auto;
+
+			&:first-child {
+				flex: 0 0 auto;
+				padding-right: calc(2rem + 1vw);
+				color: v.$c-white;
+
+				@include u.breakpoints(xxlarge) {
+					padding-right: 10rem;
+				}
+
+				:hover {
+					color: v.$c-primary-color;
+				}
+			}
+		}
+	}
+
+	&__link {
+		color: inherit;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		display: inline-block;
+		padding: 8px 16px;
+		transition: color 0.3s ease-in;
+
+		&:hover {
+			color: v.$c-white;
+		}
+	}
+}

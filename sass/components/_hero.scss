@@ -1,0 +1,160 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	z-index: 1;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		background: url('../images/header-image.jpg') no-repeat center center/cover;
+		z-index: -2;
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		background: v.$bg-gradient-horizontal;
+		z-index: -1;
+
+		@include u.breakpoints(medium) {
+			background: v.$bg-gradient-vertical;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		margin: 12rem 0rem 2rem 0rem;
+
+		@include u.breakpoints(medium) {
+			flex-direction: row;
+			justify-content: center;
+			align-items: baseline;
+			margin: 6rem 0rem 10rem 0rem;
+		}
+
+		&--left {
+			padding-right: 0;
+			color: v.$c-white;
+
+			@include u.breakpoints(medium) {
+				padding-right: 3.5rem;
+				text-align: right;
+				flex: 0 0 51.05%;
+			}
+		}
+
+		&--right {
+			color: v.$c-secondary-color;
+			padding-left: 0;
+
+			@include u.breakpoints(medium) {
+				padding-left: 3.5rem;
+				flex: 0 0 48.95%;
+			}
+		}
+	}
+
+	&__btn {
+		color: v.$c-secondary-color;
+		border-color: v.$c-secondary-color;
+		align-self: center;
+		font-size: 1.6rem;
+
+		@include u.breakpoints(medium) {
+			color: v.$c-white;
+			border-color: v.$c-white;
+			transform: translateX(-65%);
+			margin: 0rem auto 2rem auto;
+			// position: relative;
+			// z-index: 1;
+		}
+
+		&::after,
+		&::before {
+			background-color: v.$c-white;
+
+			@include u.breakpoints(medium) {
+				background-color: v.$c-primary-color;
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: v.$c-white;
+			border-color: v.$c-white;
+			transition: all 0.3s ease-in;
+
+			@include u.breakpoints(medium) {
+				color: v.$c-primary-color;
+				border-color: v.$c-primary-color;
+			}
+
+			&::after,
+			&::before {
+				background-color: v.$c-secondary-color;
+				transition: all 0.3s ease-in;
+
+				@include u.breakpoints(medium) {
+					background-color: v.$c-white;
+				}
+			}
+		}
+	}
+
+	&__sign {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		color: v.$c-white;
+		font-weight: v.$fw-black;
+		text-transform: uppercase;
+		font-size: 8rem;
+		line-height: 5.5rem;
+		z-index: 1;
+
+		@include u.breakpoints(medium) {
+			font-size: 11rem;
+			line-height: 7.5rem;
+		}
+
+		& p {
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+		& span {
+			display: inline-block;
+			background-color: v.$c-secondary-color;
+			height: 3rem;
+			width: 3rem;
+		}
+	}
+}

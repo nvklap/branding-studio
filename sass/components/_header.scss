@@ -1,0 +1,88 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as u;
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 2;
+
+	color: v.$c-secondary-color;
+	padding: 2.5rem 0;
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo-wrapper {
+		@include u.breakpoints(large) {
+			flex: 0 0 46%;
+			// flex: 0 0 49%;
+		}
+	}
+
+	&__nav {
+		@include u.breakpoints(large) {
+			flex: 1 1 auto;
+		}
+	}
+
+	&__nav-trigger {
+		position: relative;
+		background: transparent;
+		width: 2.5rem;
+		height: 2.5rem;
+		z-index: 2;
+		cursor: pointer;
+
+		@include u.breakpoints(large) {
+			display: none;
+		}
+
+		& span {
+			position: relative;
+			display: block;
+			width: 2.5rem;
+			height: 0.3rem;
+			background-color: v.$c-primary-color;
+			transition: all 0.2s ease-in;
+
+			@include u.breakpoints(medium) {
+				background-color: v.$c-secondary-color;
+			}
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 0.3rem;
+				background-color: inherit;
+			}
+
+			&::before {
+				top: -0.9rem;
+			}
+			&::after {
+				top: 0.9rem;
+			}
+		}
+
+		&--open span {
+			background-color: v.$c-white;
+			transform: rotate(-45deg);
+
+			&::before,
+			&::after {
+				top: 0;
+				transform: rotate(90deg);
+			}
+		}
+	}
+}

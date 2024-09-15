@@ -6,7 +6,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet"
 		/>
 
@@ -15,6 +15,58 @@
 		<title>Helali - Branding Studio</title>
 	</head>
 	<body>
-		<h1>Hello wrold</h1>
+		<!-- header -->
+		<header class="header" id="home">
+			<div class="header__container container">
+				<div class="header__logo-wrapper">
+					<a href="#" class="header__logo"><img src="images/logo.png" /> </a>
+				</div>
+
+				<nav class="header__nav nav">
+					<ul class="nav__list">
+						<li class="nav__item">
+							<a href="#home" class="nav__link">Home</a>
+						</li>
+						<li class="nav__item">
+							<a href="#about" class="nav__link">About</a>
+						</li>
+						<li class="nav__item">
+							<a href="#services" class="nav__link">Services</a>
+						</li>
+						<li class="nav__item">
+							<a href="#portfolio" class="nav__link">Portfolio</a>
+						</li>
+						<li class="nav__item">
+							<a href="#contact-info" class="nav__link">Contact</a>
+						</li>
+					</ul>
+				</nav>
+
+				<button
+					class="header__nav-trigger"
+					aria-label="Toggle mobile navigation"
+				>
+					<span></span>
+				</button>
+			</div>
+		</header>
+
+		<!-- hero -->
+		<main>
+			<section class="hero section">
+				<div class="hero__sign">
+					<p>UX<span></span>UI</p>
+				</div>
+
+				<div class="container hero__container">
+					<h1 class="hero__title title">
+						<span class="hero__title--left">We are</span>
+
+						<span class="hero__title--right">Creative</span>
+					</h1>
+					<a href="#portfolio" class="btn hero__btn">Portfolio</a>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>

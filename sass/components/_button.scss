@@ -1,0 +1,38 @@
+@use '../utils/variables' as v;
+
+.btn {
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: v.$fw-semibold;
+	padding: 2rem 6rem;
+	border: 2px solid transparent;
+	border-radius: 5px;
+	position: relative;
+	transition: all 0.3s ease-in;
+	cursor: pointer;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 3rem;
+		transform: translateY(-50%);
+		height: 1.3rem;
+		width: 1.3rem;
+		background-color: v.$c-primary-color;
+		border-radius: 50%;
+		transition: all 0.3s ease-in;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: -3rem;
+		transform: translateY(-50%);
+		height: 0.2rem;
+		width: 6.5rem;
+		background-color: v.$c-primary-color;
+		transition: all 0.3s ease-in;
+	}
+}

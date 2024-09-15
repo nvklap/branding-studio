@@ -1,0 +1,24 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.container {
+	position: relative;
+	width: 100%;
+	padding: 0 1.5rem;
+	margin: 0 auto;
+
+	@include u.breakpoints(xlarge) {
+		max-width: 120rem;
+	}
+}
+
+.title {
+	font-size: 6rem;
+
+	font-weight: v.$fw-extrabold;
+
+	@include u.breakpoints(large) {
+		font-size: 7.2rem;
+		line-height: 7.2rem;
+	}
+}
