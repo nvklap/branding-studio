@@ -1,0 +1,179 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as u;
+
+.about {
+	&__container {
+		padding-top: 7rem;
+		padding-bottom: 6rem;
+		position: relative;
+
+		@include u.breakpoints(medium) {
+			padding-top: 12rem;
+			padding-bottom: 13rem;
+		}
+	}
+
+	&__strike {
+		display: none;
+		@include u.breakpoints(xxlarge) {
+			display: block;
+			left: -7.4rem;
+			top: -16rem;
+			height: 26rem;
+			z-index: 1;
+		}
+	}
+
+	&__vertical-text {
+		display: none;
+		@include u.breakpoints(xxlarge) {
+			display: block;
+			top: 9.2rem;
+			right: -7rem;
+		}
+	}
+
+	&__title {
+		margin-bottom: 2rem;
+	}
+
+	&__description {
+		margin-bottom: 5rem;
+
+		@include u.breakpoints(medium) {
+			margin-bottom: 7rem;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		margin: 0px auto;
+		max-width: 40rem;
+		gap: 1.5rem;
+
+		@include u.breakpoints(medium) {
+			flex-direction: row;
+			max-width: 100%;
+		}
+	}
+
+	&__card {
+		flex: 1 1 30%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+		text-align: center;
+		gap: 0.5rem;
+		color: v.$c-black;
+
+		&:last-child {
+			margin-bottom: 0rem;
+		}
+
+		@include u.breakpoints(medium) {
+			padding: 2rem;
+			text-align: start;
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__card-icon {
+		flex: 0 0 auto;
+		width: 5rem;
+		height: 5rem;
+		background-size: contain;
+		background-position: bottom center;
+		background-repeat: no-repeat;
+
+		@include u.breakpoints(medium) {
+			max-width: 24rem;
+			width: 100%;
+			height: auto;
+			padding: 27% 0rem 0rem;
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 1rem;
+			background-position: center left;
+		}
+
+		&::after {
+			@include u.breakpoints(medium) {
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 1.1rem;
+				top: 50%;
+				left: 5px;
+				right: 0;
+				transform: translateY(-50%);
+				background-color: v.$c-primary-color;
+				z-index: -1;
+			}
+		}
+
+		&--dribble {
+			background-image: url('../images/icon-dribble.png');
+		}
+		&--behance {
+			background-image: url('../images/icon-be.png');
+		}
+		&--uplabs {
+			background-image: url('../images/icon-uplabs.png');
+			&::after {
+				left: 1.1rem;
+			}
+		}
+	}
+
+	&__card-title {
+		font-size: 2.6rem;
+		font-style: italic;
+		font-weight: v.$fw-bold;
+		text-transform: lowercase;
+		color: v.$c-secondary-color;
+
+		@include u.breakpoints(medium) {
+			font-size: 4.8rem;
+		}
+	}
+
+	&__card-text {
+		flex: 1 1 auto;
+		line-height: 1.5;
+		color: v.$c-black;
+		font-size: 1.6rem;
+
+		@include u.breakpoints(medium) {
+			font-size: 1.8rem;
+		}
+
+		& a {
+			font-weight: v.$fw-bold;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 50%;
+				height: 7px;
+				transform: scaleX(0);
+				transform-origin: center left;
+				background-color: v.$c-secondary-color;
+				transition: transform 0.3s ease;
+				z-index: -1;
+			}
+
+			&:hover {
+				&::before {
+					transform: scaleX(1);
+				}
+			}
+		}
+	}
+}

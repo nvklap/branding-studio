@@ -1,12 +1,14 @@
 $fontFamily: 'Poppins', sans-serif;
 $fw-medium: 500;
 $fw-semibold: 600;
+$fw-bold: 700;
 $fw-extrabold: 800;
 $fw-black: 900;
 
 $c-primary-color: #05fab8;
 $c-secondary-color: #2f3031;
 $c-white: #ffffff;
+$c-black: #202124;
 
 $bg-gradient-horizontal: linear-gradient(
 	180deg,
@@ -28,5 +30,5 @@ $screens: (
 	'medium': 768px,
 	'large': 992px,
 	'xlarge': 1200px,
-	'xxlarge': 1600px,
+	'xxlarge': 1400px,
 );

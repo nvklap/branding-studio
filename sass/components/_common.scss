@@ -1,6 +1,31 @@
 @use '../utils/mixins' as u;
 @use '../utils/variables' as v;
 
+.bold {
+	font-weight: v.$fw-extrabold;
+}
+
+.highlight {
+	color: v.$c-primary-color;
+}
+
+.strike {
+	position: absolute;
+	background-color: v.$c-primary-color;
+	width: 2px;
+}
+
+.vertical-text {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 2.4rem;
+	color: v.$c-black;
+	font-weight: v.$fw-medium;
+	transform-origin: right;
+	transform: rotate(-90deg);
+}
+
 .container {
 	position: relative;
 	width: 100%;
@@ -14,11 +39,24 @@
 
 .title {
 	font-size: 6rem;
-
 	font-weight: v.$fw-extrabold;
+
+	&--highlight {
+		color: v.$c-primary-color;
+	}
 
 	@include u.breakpoints(large) {
 		font-size: 7.2rem;
 		line-height: 7.2rem;
+	}
+}
+
+.description {
+	color: v.$c-black;
+	font-size: 1.8rem;
+	line-height: 1.5;
+
+	@include u.breakpoints(large) {
+		max-width: 102rem;
 	}
 }
