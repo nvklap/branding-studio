@@ -1,0 +1,136 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as u;
+
+.services {
+	background-color: v.$c-grey;
+
+	&__strike {
+		display: none;
+
+		@include u.breakpoints(xxlarge) {
+			display: block;
+			right: -8rem;
+			top: -13.5rem;
+			height: 26rem;
+			z-index: 1;
+		}
+	}
+
+	&__container {
+		padding-top: 6rem;
+		padding-bottom: 7.6rem;
+
+		@include u.breakpoints(medium) {
+			padding-top: 12rem;
+			padding-bottom: 13.6rem;
+		}
+	}
+
+	&__title {
+		margin-bottom: 3rem;
+	}
+
+	&__description {
+		margin-bottom: 5rem;
+
+		@include u.breakpoints(medium) {
+			margin-bottom: 11rem;
+		}
+	}
+
+	&__list {
+		max-width: 40rem;
+		display: flex;
+		flex-direction: column;
+		margin: 0px auto;
+		gap: 5rem;
+
+		@include u.breakpoints(medium) {
+			flex-direction: row;
+			max-width: 100%;
+			gap: 1.5rem;
+		}
+	}
+
+	&__card {
+		color: v.$c-secondary-color;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		padding: 0px;
+		align-items: center;
+
+		&:hover &-icon img:first-child {
+			opacity: 1;
+		}
+		&:hover &-icon img:last-child {
+			opacity: 0;
+		}
+
+		@include u.breakpoints(medium) {
+			align-items: flex-start;
+			flex: 1 0 30%;
+		}
+	}
+
+	&__card-icon {
+		height: 51px;
+		position: relative;
+
+		& img {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			transition: opacity 0.3s ease-out;
+
+			@include u.breakpoints(medium) {
+				left: 0;
+				transform: translateY(-50%);
+			}
+
+			&:first-child {
+				opacity: 0;
+			}
+		}
+	}
+
+	&__card-title {
+		font-size: 2.8rem;
+
+		@include u.breakpoints(large) {
+			font-size: 3.6rem;
+		}
+	}
+
+	&__card-text {
+		text-align: center;
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+		@include u.breakpoints(medium) {
+			line-height: 1.5;
+			flex: 1 0 auto;
+			text-align: start;
+			font-size: 1.8rem;
+			margin-bottom: 3rem;
+		}
+	}
+
+	&__card-btn {
+		font-size: 1.6rem;
+		color: v.$c-secondary-color;
+		border-color: v.$c-secondary-color;
+
+		&:hover {
+			color: v.$c-primary-color;
+			border-color: v.$c-primary-color;
+
+			&::after,
+			&::before {
+				background-color: v.$c-secondary-color;
+			}
+		}
+	}
+}
