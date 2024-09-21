@@ -14,3 +14,31 @@ nav.addEventListener('click', (e) => {
 		nav.classList.remove('nav--open');
 	}
 });
+
+// filter portfolio
+const portfolioFilter = document.querySelector('.portfolio__filter-list');
+const portfolioCards = document.querySelectorAll('.portfolio__card');
+
+portfolioFilter.addEventListener('click', (e) => {
+	if (e.target.tagName !== 'BUTTON') return;
+
+	document
+		.querySelector('.portfolio__filter-item--active')
+		?.classList.remove('portfolio__filter-item--active');
+
+	const currentFilter = e.target;
+	const filterValue = currentFilter.dataset.filter;
+
+	currentFilter.classList.add('portfolio__filter-item--active');
+
+	portfolioCards.forEach((card) => {
+		const matchesFilter =
+			filterValue === 'all' || card.dataset.value === filterValue;
+
+		if (matchesFilter) {
+			card.classList.remove('hidden');
+		} else {
+			card.classList.add('hidden');
+		}
+	});
+});

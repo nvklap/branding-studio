@@ -1,0 +1,175 @@
+@use '../utils/variables' as v;
+@use '../utils/mixins' as u;
+
+.portfolio {
+	padding: 5.4rem 0rem 0rem 0rem;
+
+	@include u.breakpoints(medium) {
+		padding: 13.4rem 0rem 0rem 0rem;
+	}
+
+	&__title {
+		margin-bottom: 2.5rem;
+
+		@include u.breakpoints(medium) {
+			margin-bottom: 3.5rem;
+		}
+	}
+
+	&__description {
+		margin-bottom: 3.5rem;
+
+		@include u.breakpoints(medium) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&__filter {
+		display: none;
+
+		&-list {
+			margin-bottom: 4.5rem;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+
+			@include u.breakpoints(medium) {
+				margin-bottom: 6rem;
+				gap: 2rem;
+			}
+			@include u.breakpoints(large) {
+				gap: 5rem;
+			}
+
+			& li {
+				text-align: center;
+				flex: 1 0 calc(50% - 1rem);
+
+				@include u.breakpoints(medium) {
+					flex: 0 0 auto;
+				}
+			}
+		}
+
+		&-item {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			padding: 0.5rem 1rem;
+			font-weight: v.$fw-bold;
+			font-size: 1.8rem;
+			color: v.$c-secondary-color;
+
+			&--active {
+				color: v.$c-primary-color;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+
+		@include u.breakpoints(xlarge) {
+			max-width: 160rem;
+		}
+	}
+
+	&__card {
+		flex: 0 0 100%;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+		position: relative;
+
+		@include u.breakpoints(small) {
+			flex: 0 1 50%;
+		}
+		@include u.breakpoints(medium) {
+			flex: 0 1 33.333333%;
+		}
+		@include u.breakpoints(large) {
+			flex: 0 1 25%;
+		}
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+
+			transition: transform 0.3s ease-in;
+		}
+
+		&::before {
+			background-color: v.$c-primary-color-alpha-50;
+			transform: translateY(150%) rotate(-10deg) scale(1.5);
+			z-index: 2;
+		}
+
+		&::after {
+			background-color: v.$c-primary-color-alpha-90;
+			transform: translateY(108%) rotate(-10deg) scale(1.5);
+			z-index: 3;
+			@include u.breakpoints(medium) {
+				transform: translateY(150%) rotate(-10deg) scale(1.5);
+			}
+		}
+
+		&:hover {
+			&::before {
+				transform: translate(0) rotate(-10deg) scale(1.5);
+			}
+			&::after {
+				transform: translateY(90%) rotate(-10deg) scale(1.5);
+			}
+		}
+
+		&:hover &-body {
+			transform: translateY(0%);
+			opacity: 1;
+		}
+	}
+
+	&__card-head img {
+		width: 100%;
+		object-fit: cover;
+		aspect-ratio: 1 / 1;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__card-body {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		bottom: 0;
+		left: 0;
+		color: v.$c-secondary-color;
+		z-index: 4;
+		padding: 0rem 0rem 2.5rem 2.5rem;
+		font-size: 1.6rem;
+		transition: transform 0.25s ease-in, opacity 0.15s ease-in;
+		transform: translateY(30%);
+		opacity: 1;
+
+		@include u.breakpoints(medium) {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+
+		@include u.breakpoints(xlarge) {
+			font-size: 1.8rem;
+			padding: 0rem 0rem 3.8rem 3.8rem;
+		}
+	}
+
+	&__strike {
+		height: 26rem;
+		left: -7.4rem;
+		top: -20rem;
+	}
+}
