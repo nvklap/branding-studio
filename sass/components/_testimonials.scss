@@ -1,0 +1,258 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.testimonials {
+	padding: 5rem 0rem 0rem 0rem;
+	margin: 0 auto;
+
+	@include u.breakpoints(xlarge) {
+		max-width: 160rem;
+	}
+
+	@include u.breakpoints(medium) {
+		padding: 10rem 0rem 10rem 0rem;
+	}
+
+	@include u.breakpoints(large) {
+		padding: 18rem 0rem 18rem 0rem;
+	}
+
+	&__vertical-text {
+		display: none;
+
+		@include u.breakpoints(xxlarge) {
+			display: block;
+			top: 9.2rem;
+			right: 2.5rem;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 3.5rem;
+		position: relative;
+
+		@include u.breakpoints(large) {
+			flex-direction: row;
+		}
+	}
+
+	&__left {
+		align-self: stretch;
+		background-color: v.$c-primary-color-alpha-80;
+		color: v.$c-secondary-color;
+		font-size: 1.8rem;
+		line-height: 1.3;
+		font-weight: v.$fw-bold;
+		position: relative;
+		overflow: hidden;
+		padding: 5rem 0rem 6rem 0rem;
+
+		@include u.breakpoints(large) {
+			align-self: center;
+			flex: 1 1 55%;
+			padding: 17rem 0rem 22rem 0rem;
+			font-size: 2.4rem;
+		}
+		@include u.breakpoints(xlarge) {
+			padding: 17rem 0rem 22rem 0rem;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			background-image: url('../images/testimonial-image.jpg');
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			z-index: -1;
+		}
+	}
+
+	&__slider {
+		max-width: 100%;
+		display: flex;
+		transition: transform 0.85s ease-in-out;
+
+		&-btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: transparent;
+			color: v.$c-white;
+			border: none;
+			cursor: pointer;
+			padding: 0.5rem;
+			z-index: 10;
+			font-size: 10rem;
+			font-weight: v.$fw-black;
+			transition: color 0.3s ease;
+
+			&:hover,
+			&:focus {
+				color: v.$c-secondary-color;
+			}
+
+			&--prev {
+				left: 0;
+			}
+			&--next {
+				right: 0;
+			}
+		}
+	}
+
+	&__card {
+		flex: 0 0 100%;
+		padding: 0rem 4rem;
+
+		@include u.breakpoints(medium) {
+			padding: 0rem 5rem;
+		}
+
+		&-img {
+			display: block;
+			margin-bottom: 5rem;
+			max-width: 100%;
+
+			@include u.breakpoints(large) {
+				margin-bottom: 11rem;
+			}
+		}
+
+		&-text {
+			margin-bottom: 2rem;
+
+			@include u.breakpoints(large) {
+				margin-bottom: 3rem;
+			}
+
+			&:last-of-type {
+				margin-bottom: 0rem;
+
+				& span {
+					color: v.$c-white;
+				}
+			}
+		}
+	}
+
+	&__right {
+		align-self: stretch;
+		padding: 0rem 0.5rem 0rem 0.5rem;
+
+		@include u.breakpoints(small) {
+			padding: 0rem 1.5rem 0rem 1.5rem;
+		}
+
+		@include u.breakpoints(large) {
+			flex: 1 0 calc(45% - 3.5rem);
+			align-self: center;
+			padding: 0rem 3.5rem 0rem 0rem;
+		}
+	}
+
+	&__title {
+		line-height: 5rem;
+		position: relative;
+		margin: 0rem 0rem 4rem 0rem;
+
+		@include u.breakpoints(medium) {
+			margin: 0rem 0rem 4rem 7rem;
+		}
+
+		@include u.breakpoints(large) {
+			margin: 0rem 0rem 9rem 7rem;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -7rem;
+			bottom: 0.8rem;
+			background-color: v.$c-primary-color;
+			width: 16rem;
+			height: 0.8rem;
+			z-index: -1;
+		}
+	}
+
+	&__nav {
+		max-width: 38rem;
+		margin: 0 auto;
+		font-size: 1.6rem;
+
+		@include u.breakpoints(medium) {
+			padding: 2rem 0rem 2rem 0rem;
+			background-color: v.$c-primary-color;
+		}
+
+		@include u.breakpoints(large) {
+			margin: unset;
+			padding: 7rem 0rem 8rem 0rem;
+		}
+
+		&-dots {
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+
+			& button {
+				display: block;
+				width: 1.5rem;
+				height: 1.5rem;
+				padding: 0;
+				border: 1px solid v.$c-black;
+				border-radius: 50%;
+				background-color: v.$c-black;
+				cursor: pointer;
+				transition: all 0.3s ease-in;
+
+				&:hover,
+				&.active {
+					background-color: v.$c-primary-color;
+				}
+			}
+		}
+	}
+
+	&__btn {
+		display: block;
+		max-width: 22rem;
+		margin: 0 auto 4rem auto;
+		border-color: v.$c-secondary-color;
+		color: inherit;
+
+		&::before,
+		&::after {
+			background-color: v.$c-primary-color;
+
+			@include u.breakpoints(medium) {
+				background-color: v.$c-white;
+			}
+		}
+
+		&:hover {
+			color: v.$c-primary-color;
+			border-color: v.$c-primary-color;
+
+			@include u.breakpoints(medium) {
+				color: v.$c-white;
+				border-color: v.$c-white;
+			}
+
+			&::before,
+			&::after {
+				background-color: v.$c-secondary-color;
+			}
+		}
+	}
+}

@@ -42,13 +42,21 @@
 }
 
 .title {
-	font-size: 6rem;
+	font-size: 4rem;
+
 	font-weight: v.$fw-extrabold;
 
 	&--highlight {
 		color: v.$c-primary-color;
 	}
 
+	@include u.breakpoints(small) {
+		font-size: 5rem;
+	}
+	@include u.breakpoints(medium) {
+		font-size: 6rem;
+		line-height: 6rem;
+	}
 	@include u.breakpoints(large) {
 		font-size: 7.2rem;
 		line-height: 7.2rem;

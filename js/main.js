@@ -42,3 +42,59 @@ portfolioFilter.addEventListener('click', (e) => {
 		}
 	});
 });
+
+// slider
+const swiperWrapper = document.querySelector('.testimonials__slider');
+const slides = document.querySelectorAll('.testimonials__card');
+const dotsWrapper = document.querySelector('.testimonials__nav-dots');
+const dots = document.querySelectorAll('.testimonials__nav-dots button');
+const prevButton = document.querySelector('.testimonials__slider-btn--prev');
+const nextButton = document.querySelector('.testimonials__slider-btn--next');
+let currentIndex = 0;
+
+dotsWrapper.addEventListener('click', (e) => {
+	if (e.target.tagName !== 'BUTTON') return;
+
+	const index = Array.from(dots).indexOf(e.target);
+	if (index === -1) return;
+
+	document
+		.querySelector('.testimonials__nav-dots .active')
+		?.classList.remove('active');
+	e.target.classList.add('active');
+
+	currentIndex = index;
+	updateSlider();
+});
+
+const updateSlider = () => {
+	const slideWidth = slides[0].clientWidth;
+	swiperWrapper.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+	dots.forEach((dot, index) => {
+		if (currentIndex === index) {
+			dot.classList.add('active');
+		} else {
+			dot.classList.remove('active');
+		}
+	});
+};
+
+const showPrevSlide = () => {
+	if (currentIndex > 0) {
+		currentIndex--;
+		updateSlider();
+	}
+};
+
+const showNextSlide = () => {
+	if (currentIndex < slides.length - 1) {
+		currentIndex++;
+		updateSlider();
+	}
+};
+
+prevButton.addEventListener('click', showPrevSlide);
+nextButton.addEventListener('click', showNextSlide);
+
+window.addEventListener('resize', updateSlider);
