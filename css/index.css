@@ -1329,4 +1329,87 @@ body {
 }
 .testimonials__btn:hover::before, .testimonials__btn:hover::after {
   background-color: #2f3031;
+}
+
+.contact {
+  background-color: hsla(210, 7%, 11%, 0.93);
+  color: #ffffff;
+  padding: 5rem 0rem 7rem 0rem;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .contact {
+    padding: 11rem 0rem 15rem 0rem;
+  }
+}
+.contact::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/person-using-white-apple-keyboard-3740878.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+.contact__title {
+  margin-bottom: 8rem;
+}
+@media (min-width: 768px) {
+  .contact__title {
+    margin-bottom: 10rem;
+  }
+}
+.contact__btn {
+  border-color: #05fab8;
+  margin-bottom: 7rem;
+  font-size: 1.6rem;
+}
+.contact__btn::before, .contact__btn::after {
+  background-color: #ffffff;
+}
+.contact__btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.contact__btn:hover::before, .contact__btn:hover::after {
+  background-color: #05fab8;
+}
+.contact__text {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.contact__email {
+  display: inline-block;
+  font-weight: 700;
+  position: relative;
+}
+.contact__email::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+  background-color: #ffffff;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  z-index: 1;
+}
+.contact__email:hover::before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }/*# sourceMappingURL=index.css.map */

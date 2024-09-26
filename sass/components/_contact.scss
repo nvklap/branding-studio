@@ -1,0 +1,91 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.contact {
+	background-color: v.$c-black-alpha-90;
+	color: v.$c-white;
+	padding: 5rem 0rem 7rem 0rem;
+	text-align: center;
+	position: relative;
+
+	@include u.breakpoints(medium) {
+		padding: 11rem 0rem 15rem 0rem;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+		background-image: url('../images/person-using-white-apple-keyboard-3740878.jpg');
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		z-index: -1;
+	}
+
+	&__title {
+		margin-bottom: 8rem;
+
+		@include u.breakpoints(medium) {
+			margin-bottom: 10rem;
+		}
+	}
+
+	&__btn {
+		border-color: v.$c-primary-color;
+		margin-bottom: 7rem;
+		font-size: 1.6rem;
+
+		&::before,
+		&::after {
+			background-color: v.$c-white;
+		}
+
+		&:hover {
+			border-color: v.$c-white;
+			color: v.$c-white;
+
+			&::before,
+			&::after {
+				background-color: v.$c-primary-color;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 2.4rem;
+		font-weight: v.$fw-medium;
+	}
+
+	&__email {
+		display: inline-block;
+		font-weight: v.$fw-bold;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 7px;
+			transform: scaleX(0);
+			transform-origin: center left;
+			background-color: v.$c-white;
+			transition: transform 0.3s ease;
+			z-index: 1;
+		}
+
+		&:hover {
+			&::before {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
