@@ -1,0 +1,91 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.connect {
+	&__container {
+		padding: 7rem 0rem 2rem 0rem;
+		position: relative;
+
+		@include u.breakpoints(medium) {
+			padding: 14rem 0rem 2rem 0rem;
+		}
+	}
+
+	&__vertical-text {
+		display: block;
+		font-size: 1.6rem;
+		top: 20rem;
+		right: 2rem;
+
+		@include u.breakpoints(medium) {
+			font-size: 1.8rem;
+			top: 9.2rem;
+			right: 7rem;
+		}
+		@include u.breakpoints(xlarge) {
+			font-size: 2.4rem;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			right: -222px;
+			height: 2px;
+			width: 200px;
+			background-color: #05fab8;
+		}
+	}
+
+	&__form {
+		display: block;
+		max-width: 61rem;
+		padding: 0rem 3.5rem 0rem 3.5rem;
+		margin: 0 auto;
+
+		&-input {
+			display: block;
+			max-width: 57rem;
+			width: 100%;
+			padding: 1.5rem 3rem 1.5rem 3rem;
+			margin: 0rem 0rem 3rem 0rem;
+			border: none;
+			border-bottom: 2px solid v.$c-primary-color;
+			font-size: 1.8rem;
+			color: v.$c-secondary-color;
+			font-family: v.$fontFamily;
+
+			@include u.breakpoints(medium) {
+				font-size: 2.4rem;
+			}
+
+			&::placeholder {
+				color: v.$c-grey-dark;
+			}
+		}
+
+		& textarea {
+			min-height: 15rem;
+		}
+
+		&-btn {
+			margin: 4rem 0rem 1rem 0rem;
+			background-color: transparent;
+			border-color: v.$c-secondary-color;
+
+			@include u.breakpoints(medium) {
+				margin: 7rem 0rem 1rem 0rem;
+			}
+
+			&:hover {
+				border-color: v.$c-primary-color;
+				color: v.$c-primary-color;
+				&::before,
+				&::after {
+					background-color: v.$c-secondary-color;
+				}
+			}
+		}
+	}
+}

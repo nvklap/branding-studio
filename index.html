@@ -439,13 +439,48 @@
 					<p class="contact__title title">
 						Want to say <span class="highlight">hello</span>?
 					</p>
-					<a href="#contact-form" class="contact__btn btn highlight">Contact</a>
+					<a href="#form" class="contact__btn btn highlight">Contact</a>
 					<p class="contact__text">
 						You can reach us via email
 						<a href="mailto:support@domain.com" class="contact__email highlight"
 							>support@domain.com</a
 						>
 					</p>
+				</div>
+			</section>
+
+			<!-- contact form -->
+			<section class="connect">
+				<div class="connect__container container">
+					<a href="#home" class="connect__vertical-text vertical-text"
+						>scroll to top</a
+					>
+
+					<form action="" class="connect__form">
+						<input
+							class="connect__form-input"
+							type="text"
+							placeholder="Name"
+							name="name"
+						/>
+						<input
+							class="connect__form-input"
+							type="email"
+							placeholder="Email"
+							name="email"
+							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+							required
+						/>
+						<textarea
+							class="connect__form-input"
+							rows="1"
+							placeholder="Drop Message"
+							name="message"
+							required
+						></textarea>
+
+						<button class="connect__form-btn btn" type="submit">Send Us</button>
+					</form>
 				</div>
 			</section>
 		</main>

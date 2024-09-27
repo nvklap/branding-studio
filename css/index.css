@@ -18,6 +18,7 @@ a {
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1412,4 +1413,101 @@ body {
 .contact__email:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+}
+
+.connect__container {
+  padding: 7rem 0rem 2rem 0rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .connect__container {
+    padding: 14rem 0rem 2rem 0rem;
+  }
+}
+.connect__vertical-text {
+  display: block;
+  font-size: 1.6rem;
+  top: 20rem;
+  right: 2rem;
+}
+@media (min-width: 768px) {
+  .connect__vertical-text {
+    font-size: 1.8rem;
+    top: 9.2rem;
+    right: 7rem;
+  }
+}
+@media (min-width: 1200px) {
+  .connect__vertical-text {
+    font-size: 2.4rem;
+  }
+}
+.connect__vertical-text::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: -222px;
+  height: 2px;
+  width: 200px;
+  background-color: #05fab8;
+}
+.connect__form {
+  display: block;
+  max-width: 61rem;
+  padding: 0rem 3.5rem 0rem 3.5rem;
+  margin: 0 auto;
+}
+.connect__form-input {
+  display: block;
+  max-width: 57rem;
+  width: 100%;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  margin: 0rem 0rem 3rem 0rem;
+  border: none;
+  border-bottom: 2px solid #05fab8;
+  font-size: 1.8rem;
+  color: #2f3031;
+  font-family: "Poppins", sans-serif;
+}
+@media (min-width: 768px) {
+  .connect__form-input {
+    font-size: 2.4rem;
+  }
+}
+.connect__form-input::-webkit-input-placeholder {
+  color: #9c9c9c;
+}
+.connect__form-input::-moz-placeholder {
+  color: #9c9c9c;
+}
+.connect__form-input:-ms-input-placeholder {
+  color: #9c9c9c;
+}
+.connect__form-input::-ms-input-placeholder {
+  color: #9c9c9c;
+}
+.connect__form-input::placeholder {
+  color: #9c9c9c;
+}
+.connect__form textarea {
+  min-height: 15rem;
+}
+.connect__form-btn {
+  margin: 4rem 0rem 1rem 0rem;
+  background-color: transparent;
+  border-color: #2f3031;
+}
+@media (min-width: 768px) {
+  .connect__form-btn {
+    margin: 7rem 0rem 1rem 0rem;
+  }
+}
+.connect__form-btn:hover {
+  border-color: #05fab8;
+  color: #05fab8;
+}
+.connect__form-btn:hover::before, .connect__form-btn:hover::after {
+  background-color: #2f3031;
 }/*# sourceMappingURL=index.css.map */
