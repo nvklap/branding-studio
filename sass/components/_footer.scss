@@ -1,0 +1,83 @@
+@use '../utils/mixins' as u;
+@use '../utils/variables' as v;
+
+.footer {
+	background-color: v.$c-grey;
+
+	padding: 3.5rem 0rem 3.5rem 0rem;
+	color: v.$c-secondary-color;
+	font-weight: v.$fw-bold;
+	font-size: 1.8rem;
+	font-size: 1.6rem;
+	text-align: center;
+
+	@include u.breakpoints(medium) {
+		padding: 6rem 0rem 6rem 0rem;
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column-reverse;
+		gap: 1rem;
+		padding: 0rem 1.5rem 0rem 1.5rem;
+
+		@include u.breakpoints(large) {
+			flex-direction: row;
+		}
+	}
+
+	&__list {
+		@include u.breakpoints(small) {
+			display: flex;
+			gap: 2rem;
+		}
+
+		a {
+			color: inherit;
+			position: relative;
+			transition: color 0.2s ease-in;
+
+			&:hover {
+				color: v.$c-primary-color;
+			}
+
+			@include u.breakpoints(small) {
+				&::after {
+					position: absolute;
+					content: '';
+					top: 50%;
+					right: -1rem;
+					height: 1.8rem;
+					width: 2px;
+					background-color: v.$c-secondary-color;
+					transform: rotate(20deg) translateY(-50%);
+				}
+			}
+		}
+
+		li:last-child a::after {
+			display: none;
+		}
+	}
+
+	&__socials {
+		&-wrapper {
+			display: flex;
+			gap: 2rem;
+		}
+
+		&-link {
+			ion-icon {
+				font-size: 3rem;
+				color: v.$c-secondary-color;
+				transition: color 0.3s ease;
+
+				&:hover {
+					color: v.$c-primary-color;
+				}
+			}
+		}
+	}
+}
