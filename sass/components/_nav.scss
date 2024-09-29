@@ -15,7 +15,8 @@
 	align-items: center;
 	text-align: center;
 	overflow: auto;
-	transform: translateX(100%);
+	transform: translateX(200%);
+	opacity: 0;
 	transition: all 300ms ease-in-out;
 	z-index: 1;
 
@@ -23,10 +24,12 @@
 		all: unset;
 		display: block;
 		width: 100%;
+		opacity: 1;
 	}
 
 	&--open {
 		transform: translateX(0%);
+		opacity: 1;
 	}
 
 	&__list {
@@ -50,6 +53,19 @@
 
 				:hover {
 					color: v.$c-primary-color;
+				}
+			}
+
+			&--fixed {
+				color: v.$c-white;
+
+				&:hover {
+					color: v.$c-primary-color;
+				}
+
+				&:first-child {
+					flex: 1 1 auto;
+					padding-right: 0;
 				}
 			}
 		}

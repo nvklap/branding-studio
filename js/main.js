@@ -1,3 +1,21 @@
+// header
+const header = document.querySelector('.header');
+const hero = document.querySelector('.hero');
+const navLinks = document.querySelectorAll('.nav__item');
+
+const intersectionOption = { rootMargin: '-50% 0px 0px 0px' };
+
+const heroObserver = new IntersectionObserver(([entry]) => {
+	const scrolled = !entry.isIntersecting;
+
+	header.classList.toggle('header--fixed', scrolled);
+	navLinks.forEach((link) =>
+		link.classList.toggle('nav__item--fixed', scrolled)
+	);
+}, intersectionOption);
+
+heroObserver.observe(hero);
+
 // Toggle mobile menu
 const navBtn = document.querySelector('.header__nav-trigger');
 const nav = document.querySelector('.nav');
