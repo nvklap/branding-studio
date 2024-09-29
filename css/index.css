@@ -289,6 +289,7 @@ body {
   -webkit-transform: translateX(0%);
           transform: translateX(0%);
   opacity: 1;
+  color: #2f3031;
 }
 @media (min-width: 992px) {
   .nav__list {
@@ -320,18 +321,6 @@ body {
   .nav__item:first-child :hover {
     color: #05fab8;
   }
-  .nav__item--fixed {
-    color: #ffffff;
-  }
-  .nav__item--fixed:hover {
-    color: #05fab8;
-  }
-  .nav__item--fixed:first-child {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    padding-right: 0;
-  }
 }
 .nav__link {
   color: inherit;
@@ -339,8 +328,8 @@ body {
   text-transform: uppercase;
   display: inline-block;
   padding: 8px 16px;
-  -webkit-transition: color 0.3s ease-in;
-  transition: color 0.3s ease-in;
+  -webkit-transition: color 0.15s ease-in;
+  transition: color 0.15s ease-in;
 }
 .nav__link:hover {
   color: #ffffff;

@@ -9,9 +9,9 @@ const heroObserver = new IntersectionObserver(([entry]) => {
 	const scrolled = !entry.isIntersecting;
 
 	header.classList.toggle('header--fixed', scrolled);
-	navLinks.forEach((link) =>
-		link.classList.toggle('nav__item--fixed', scrolled)
-	);
+	// navLinks.forEach((link) =>
+	// 	link.classList.toggle('nav__item--fixed', scrolled)
+	// );
 }, intersectionOption);
 
 heroObserver.observe(hero);

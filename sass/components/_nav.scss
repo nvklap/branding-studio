@@ -30,6 +30,7 @@
 	&--open {
 		transform: translateX(0%);
 		opacity: 1;
+		color: v.$c-secondary-color;
 	}
 
 	&__list {
@@ -55,19 +56,6 @@
 					color: v.$c-primary-color;
 				}
 			}
-
-			&--fixed {
-				color: v.$c-white;
-
-				&:hover {
-					color: v.$c-primary-color;
-				}
-
-				&:first-child {
-					flex: 1 1 auto;
-					padding-right: 0;
-				}
-			}
 		}
 	}
 
@@ -77,7 +65,7 @@
 		text-transform: uppercase;
 		display: inline-block;
 		padding: 8px 16px;
-		transition: color 0.3s ease-in;
+		transition: color 0.15s ease-in;
 
 		&:hover {
 			color: v.$c-white;
