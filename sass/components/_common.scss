@@ -5,6 +5,10 @@
 	display: none;
 }
 
+.locked {
+	overflow: hidden;
+}
+
 .bold {
 	font-weight: v.$fw-extrabold;
 }

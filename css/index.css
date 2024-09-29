@@ -29,6 +29,10 @@ body {
   display: none;
 }
 
+.locked {
+  overflow: hidden;
+}
+
 .bold {
   font-weight: 800;
 }

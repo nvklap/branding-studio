@@ -23,6 +23,7 @@ const nav = document.querySelector('.nav');
 navBtn.addEventListener('click', () => {
 	navBtn.classList.toggle('header__nav-trigger--open');
 	nav.classList.toggle('nav--open');
+	document.body.classList.toggle('locked');
 });
 
 // Hide Menu on click
