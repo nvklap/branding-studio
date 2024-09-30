@@ -11,7 +11,37 @@
 		/>
 
 		<!-- preload images -->
-		<link rel="preload" as="image" href="./images/header-image.jpg" />
+
+		<link
+			rel="preload"
+			as="image"
+			href="./images/header-image-small.jpg"
+			media="(max-width: 768px)"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./images/header-image-medium.jpg"
+			media="(min-width: 768px) and (max-width: 992px)"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./images/header-image-large.jpg"
+			media="(min-width: 992px) and (max-width: 1119px)"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./images/header-image-xlarge.jpg"
+			media="(min-width: 1200px) and (max-width: 1599px)"
+		/>
+		<link
+			rel="preload"
+			as="image"
+			href="./images/header-image-xxlarge.jpg"
+			media="(min-width: 1600px)"
+		/>
 
 		<link rel="stylesheet" href="css/index.min.css" />
 		<script defer src="./js/main.js"></script>

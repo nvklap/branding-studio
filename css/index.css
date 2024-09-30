@@ -364,8 +364,31 @@ body {
   bottom: 0;
   height: 100%;
   width: 100%;
-  background: url("../images/header-image.jpg") no-repeat center center/cover;
+  background-image: url("../images/header-image-small.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   z-index: -2;
+}
+@media (min-width: 768px) {
+  .hero:before {
+    background-image: url("../images/header-image-medium.jpg");
+  }
+}
+@media (min-width: 992px) {
+  .hero:before {
+    background-image: url("../images/header-image-large.jpg");
+  }
+}
+@media (min-width: 1200px) {
+  .hero:before {
+    background-image: url("../images/header-image-xlarge.jpg");
+  }
+}
+@media (min-width: 1400px) {
+  .hero:before {
+    background-image: url("../images/header-image-xxlarge.jpg");
+  }
 }
 .hero:after {
   content: "";
