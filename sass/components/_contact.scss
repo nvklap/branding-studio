@@ -21,12 +21,22 @@
 		bottom: 0;
 		height: 100%;
 		width: 100%;
-		background-image: url('../images/person-using-white-apple-keyboard-3740878.jpg');
+		background-image: url('../images/contact-bg-small.jpg');
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 		z-index: -1;
+
+		@include u.breakpoints(medium) {
+			background-image: url('../images/contact-bg-medium.jpg');
+		}
+		@include u.breakpoints(large) {
+			background-image: url('../images/contact-bg-large.jpg');
+		}
+		@include u.breakpoints(xlarge) {
+			background-image: url('../images/contact-bg-xlarge.jpg');
+		}
 	}
 
 	&__title {
