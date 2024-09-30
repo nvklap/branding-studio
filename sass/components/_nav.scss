@@ -57,6 +57,15 @@
 				}
 			}
 		}
+
+		&--fixed {
+			@include u.breakpoints(large) {
+				&:first-child {
+					padding-right: 0;
+					flex: 1 1 auto;
+				}
+			}
+		}
 	}
 
 	&__link {
