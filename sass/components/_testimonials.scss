@@ -69,11 +69,15 @@
 			right: 0;
 			height: 100%;
 			width: 100%;
-			background-image: url('../images/testimonial-image.jpg');
+			background-image: url('../images/testimonial-image-small.jpg');
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
 			z-index: -1;
+
+			@include u.breakpoints(medium) {
+				background-image: url('../images/testimonial-image.jpg');
+			}
 		}
 	}
 
