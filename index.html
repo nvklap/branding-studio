@@ -13,31 +13,31 @@
 		<!-- preload images -->
 
 		<link
-			rel="preload"
+			rel="prefetch"
 			as="image"
 			href="./images/header-image-small.jpg"
 			media="(max-width: 768px)"
 		/>
 		<link
-			rel="preload"
+			rel="prefetch"
 			as="image"
 			href="./images/header-image-medium.jpg"
 			media="(min-width: 768px) and (max-width: 992px)"
 		/>
 		<link
-			rel="preload"
+			rel="prefetch"
 			as="image"
 			href="./images/header-image-large.jpg"
 			media="(min-width: 992px) and (max-width: 1119px)"
 		/>
 		<link
-			rel="preload"
+			rel="prefetch"
 			as="image"
 			href="./images/header-image-xlarge.jpg"
 			media="(min-width: 1200px) and (max-width: 1599px)"
 		/>
 		<link
-			rel="preload"
+			rel="prefetch"
 			as="image"
 			href="./images/header-image-xxlarge.jpg"
 			media="(min-width: 1600px)"
@@ -60,7 +60,7 @@
 	</head>
 	<body>
 		<!-- header -->
-		<header class="header" id="home">
+		<header class="header">
 			<div class="header__container container">
 				<div class="header__logo-wrapper">
 					<a href="#" class="header__logo"><img src="images/logo.png" /> </a>
@@ -97,7 +97,7 @@
 
 		<main>
 			<!-- hero -->
-			<section class="hero section">
+			<section class="hero section" id="home">
 				<div class="hero__sign">
 					<p>UX<span></span>UI</p>
 				</div>
@@ -124,39 +124,36 @@
 						<span class="title--highlight">About</span> us
 					</h2>
 					<p class="about__description description">
-						A <span class="bold">creative</span> director is a position often
-						found within the graphic design, film, music, video game, fashion,
-						advertising, media, or entertainment industries, but may be useful
-						in other creative organizations such as web development and software
-						development firms as well.
+						At <span class="bold">helali</span>, we blend creativity with
+						strategy to shape unique brand identities. Our expertise in UX/UI
+						design, graphic design, and branding ensures that your business
+						stands out in a crowded market. Whether you're launching a new brand
+						or refreshing an existing one, we’re here to create designs that
+						captivate and convert.
 					</p>
 					<ul class="about__list">
 						<li class="about__card">
 							<div class="about__card-icon about__card-icon--dribble"></div>
 							<h3 class="about__card-title">dribble</h3>
 							<div class="about__card-text">
-								Check out our
-								<a class="highlight bold" href="">dribbble</a> profile for more.
-								You can get more porfolio sample here
+								A <a class="highlight bold" href="">showcase</a> of our most
+								creative and visually stunning designs.
 							</div>
 						</li>
 						<li class="about__card">
 							<div class="about__card-icon about__card-icon--behance"></div>
 							<h3 class="about__card-title">behance</h3>
 							<div class="about__card-text">
-								Check out our
-								<a class="highlight bold" href="">behance</a> profile for more.
-								You can get more porfolio sample here Lorem ipsum dolor sit,
-								amet consectetur adipisicing elit. Placeat, porro.
+								<a class="highlight bold" href="">Explore</a> in-depth case
+								studies and full branding projects.
 							</div>
 						</li>
 						<li class="about__card">
 							<div class="about__card-icon about__card-icon--uplabs"></div>
 							<h3 class="about__card-title">uplabs</h3>
 							<div class="about__card-text">
-								Check out our
-								<a class="highlight bold" href="">uplabs</a> profile for more.
-								You can get more porfolio sample here
+								<a class="highlight bold" href="">Discover</a> innovative and
+								modern UI/UX concepts crafted for digital experiences.
 							</div>
 						</li>
 					</ul>
@@ -172,10 +169,13 @@
 						Our <span class="highlight">Services</span>
 					</h2>
 					<p class="services__description description">
-						Graphic Design Services. Websites, businesses and brands are all
-						much more than just words and products they're also images and art.
-						Graphic design is an integral part of any business and that's as
-						true for your company's image and your marketing.
+						We transform ideas into visually compelling and strategically
+						effective designs. Whether you're building a brand from scratch or
+						refining an existing identity, our expertise ensures a seamless and
+						impactful presence across all platforms. From user-centered UX/UI
+						design to striking graphic visuals and cohesive branding, we craft
+						experiences that captivate, engage, and inspire. Let’s bring your
+						vision to life with creativity and precision.
 					</p>
 					<ul class="services__list">
 						<li class="services__card">
@@ -188,8 +188,8 @@
 							</div>
 							<h5 class="services__card-title bold">UX.UI Design</h5>
 							<p class="services__card-text">
-								Check out our <span class="semibold">dribbble</span> profile for
-								more. You can get more porfolio sample here
+								We design intuitive, user-friendly digital experiences that
+								enhance engagement and drive results.
 							</p>
 
 							<a class="services__card-btn btn" href="">Portfolio</a>
@@ -201,8 +201,8 @@
 							</div>
 							<h5 class="services__card-title bold">Graphic Design</h5>
 							<p class="services__card-text">
-								Check out our <span class="semibold">behance</span> profile for
-								more. You can get more porfolio sample here
+								From marketing materials to social media visuals, we craft
+								eye-catching designs that reflect your brand's essence.
 							</p>
 							<a class="services__card-btn btn" href="">Portfolio</a>
 						</li>
@@ -213,11 +213,10 @@
 							</div>
 							<h5 class="services__card-title bold">Logo Branding</h5>
 							<p class="services__card-text">
-								Check out our <span class="semibold">dribbble</span> profile for
-								more. You can get more porfolio sample here. Lorem ipsum dolor
-								sit amet. Lorem ipsum dolor sit, amet consectetur adipisicing
-								elit. Recusandae, perferendis sed. Velit cum eligendi minus
-								voluptatibus totam sapiente quos aperiam!
+								A logo is more than an image; it’s your brand’s identity. We
+								create logos that tell your story. We develop cohesive brand
+								strategies that establish trust and recognition across all
+								platforms.
 							</p>
 							<a class="services__card-btn btn" href="">Portfolio</a>
 						</li>
@@ -234,10 +233,12 @@
 						<span class="highlight">Portfolio </span>World
 					</h2>
 					<p class="portfolio__description description">
-						Graphic Design Services. Websites, businesses and brands are all
-						much more than just words and products they're also images and art.
-						Graphic design is an integral part of any business and that's as
-						true for your company's image and your marketing.
+						Great design is more than aesthetics—it’s about creating meaningful
+						experiences that leave a lasting impression. Explore our portfolio
+						to see how we blend creativity, strategy, and innovation to craft
+						unique brand identities, engaging user experiences, and striking
+						visuals. Each project reflects our commitment to excellence and our
+						passion for design.
 					</p>
 					<ul class="portfolio__filter-list">
 						<li>
@@ -526,11 +527,12 @@
 									alt=""
 								/>
 								<p class="testimonials__card-text">
-									helali is the leading community of creatives, offering the
-									best digital inspiration and downloads, every day.
+									Working with helali was a game-changer for our brand. Their
+									team truly understood our vision and transformed it into a
+									stunning visual identity that resonates with our audience.
 								</p>
 								<p class="testimonials__card-text">
-									Joe Doe, <span>logo design</span>
+									Emily Carter, <span>CEO at BrightPath Marketing</span>
 								</p>
 							</div>
 							<div class="testimonials__card">
@@ -540,13 +542,12 @@
 									alt=""
 								/>
 								<p class="testimonials__card-text">
-									helali is the leading community of creatives, offering the
-									best digital inspiration and downloads, every day. Lorem ipsum
-									dolor sit amet consectetur adipisicing elit. Harum,
-									consequuntur?
+									The UX/UI design they created for our platform exceeded our
+									expectations. The attention to detail and user-centric
+									approach made a significant impact on our customer engagement
 								</p>
 								<p class="testimonials__card-text">
-									Jon Mikail, <span>logo design</span>
+									James Reynolds, <span>Product Manager at NexaTech</span>
 								</p>
 							</div>
 
@@ -557,67 +558,16 @@
 									alt=""
 								/>
 								<p class="testimonials__card-text">
-									helali is the leading community of creatives, offering the
-									best digital inspiration and downloads, every day.
+									From logo design to full-scale branding, the results were
+									outstanding. Their creativity and strategic thinking helped
+									position our brand as a market leader.
 								</p>
 								<p class="testimonials__card-text">
-									Joe Doe, <span>logo design</span>
+									Sophia Martinez, <span>Founder at Verde Organics</span>
 								</p>
 							</div>
 						</div>
-						<!-- <div class="testimonials__slider">
-							<div class="testimonials__card">
-								<div class="testimonials__card-content">
-									<img
-										class="testimonials__card-img"
-										src="images/quote.png"
-										alt=""
-									/>
-									<p class="testimonials__card-text">
-										helali is the leading community of creatives, offering the
-										best digital inspiration and downloads, every day.
-									</p>
-									<p class="testimonials__card-text">
-										Joe Doe, <span>logo design</span>
-									</p>
-								</div>
-							</div>
-							<div class="testimonials__card">
-								<div class="testimonials__card-content">
-									<img
-										class="testimonials__card-img"
-										src="images/quote.png"
-										alt=""
-									/>
-									<p class="testimonials__card-text">
-										helali is the leading community of creatives, offering the
-										best digital inspiration and downloads, every day. Lorem
-										ipsum dolor sit amet consectetur adipisicing elit. Harum,
-										consequuntur?
-									</p>
-									<p class="testimonials__card-text">
-										Jon Mikail, <span>logo design</span>
-									</p>
-								</div>
-							</div>
 
-							<div class="testimonials__card">
-								<div class="testimonials__card-content">
-									<img
-										class="testimonials__card-img"
-										src="images/quote.png"
-										alt=""
-									/>
-									<p class="testimonials__card-text">
-										helali is the leading community of creatives, offering the
-										best digital inspiration and downloads, every day.
-									</p>
-									<p class="testimonials__card-text">
-										Joe Doe, <span>logo design</span>
-									</p>
-								</div>
-							</div>
-						</div> -->
 						<button
 							class="testimonials__slider-btn testimonials__slider-btn--prev"
 							aria-label="Show previous slide"
