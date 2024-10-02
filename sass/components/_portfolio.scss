@@ -59,6 +59,11 @@
 			font-weight: v.$fw-bold;
 			font-size: 1.8rem;
 			color: v.$c-secondary-color;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: v.$c-grey-dark;
+			}
 
 			&--active {
 				color: v.$c-primary-color;

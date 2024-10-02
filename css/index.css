@@ -972,6 +972,11 @@ body {
   font-weight: 700;
   font-size: 1.8rem;
   color: #2f3031;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.portfolio__filter-item:hover {
+  color: #9c9c9c;
 }
 .portfolio__filter-item--active {
   color: #05fab8;
